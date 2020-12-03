@@ -4,58 +4,62 @@ while True:
     upclist = [int(d) for d in str(upc)]
 
     if len(upclist) == 13:
-        print(str(upc) + " is a 13 digit upc")
-        sum1 = upclist[1] + upclist[3] + upclist[5] + upclist[7] + upclist[9] + upclist[11]
-        total1 = sum1 * 3
+        print(upclist)
+        print("Dropping: " + str(upclist[11]) + " & " + str(upclist[12]))
 
-        total2 = upclist[0] + upclist[2] + upclist[4] + upclist[6] + upclist[8] + upclist[10] + upclist[12]
+        print("====================")
+        odds = (upclist[0] * 3) + (upclist[2] * 3) + (upclist[4] * 3) + \
+               (upclist[6] * 3) + (upclist[8] * 3) + (upclist[10] * 3)
+        print("Sum of odds (x3):" + str(odds))
+        evens = upclist[1] + upclist[3] + upclist[5] + upclist[7] + upclist[9]
+        print("Sum of evens: " + str(evens))
+        print("====================")
 
-        findcheck = total1 + total2
-        print("Sum before check: " + str(findcheck))
-        if findcheck % 10 != 0:
-            counter = 0
-            while findcheck % 10 != 0:
-                counter = counter + 1
-                findcheck = findcheck + 1
-            print("The Check digit is: " + str(counter))
-        else:
-            print("The check digit for is " + str(upclist[12]))
+        sum = (evens + odds)
+        print("The Sum is: " + str(sum))
+        checkdigit = 0
+        while sum % 10 != 0:
+            checkdigit = checkdigit + 1
+            sum = sum + 1
+        print("The Check Digit is: " + str(checkdigit))
 
     elif len(upclist) == 12:
-        print(str(upc) + " is a 12 digit upc")
-        sum1 = upclist[1] + upclist[3] + upclist[5] + upclist[7] + upclist[9] + upclist[11]
-        total1 = sum1 * 3
+        print(upclist)
+        print("Dropping: " + str(upclist[11]))
 
-        total2 = upclist[0] + upclist[2] + upclist[4] + upclist[6] + upclist[8] + upclist[10]
+        print("====================")
+        odds = (upclist[0] * 3) + (upclist[2] * 3) + (upclist[4] * 3) + \
+               (upclist[6] * 3) + (upclist[8] * 3) + (upclist[10] * 3)
+        print("Sum of odds (x3):" + str(odds))
+        evens = upclist[1] + upclist[3] + upclist[5] + upclist[7] + upclist[9]
+        print("Sum of evens: " + str(evens))
+        print("====================")
 
-        findcheck = total1 + total2
-        print("Sum before check: " + str(findcheck))
-        if findcheck % 10 != 0:
-            counter = 0
-            while findcheck % 10 != 0:
-                counter = counter + 1
-                findcheck = findcheck + 1
-            print("The Check digit is: " + str(counter))
-        else:
-            print("The Check digit is: " + str(upclist[11]))
+        sum = (evens + odds)
+        print("The Sum is: " + str(sum))
+        checkdigit = 0
+        while sum % 10 != 0:
+            checkdigit = checkdigit + 1
+            sum = sum + 1
+        print("The Check Digit is: " + str(checkdigit))
 
     elif len(upclist) == 11:
-        print(str(upc) + " is a 11 digit upc")
-        sum1 = upclist[1] + upclist[3] + upclist[5] + upclist[7] + upclist[9]
-        total1 = sum1 * 3
+        print(upclist)
 
-        total2 = upclist[0] + upclist[2] + upclist[4] + upclist[6] + upclist[8] + upclist[10]
+        print("====================")
+        odds = (upclist[0] * 3) + (upclist[2] * 3) + (upclist[4] * 3) + \
+               (upclist[6] * 3) + (upclist[8] * 3) + (upclist[10] * 3)
+        print("Sum of odds (x3):" + str(odds))
+        evens = upclist[1] + upclist[3] + upclist[5] + upclist[7] + upclist[9]
+        print("Sum of evens: " + str(evens))
+        print("====================")
 
-        findcheck = total1 + total2
-        print("Sum before check: " + str(findcheck))
-        if findcheck % 10 != 0:
-            counter = 0
-            while findcheck % 10 != 0:
-                counter = counter + 1
-                findcheck = findcheck + 1
-            print("The Check digit is: " + str(counter))
-        else:
-            print("The Check digit is: " + str(upclist[10]))
-
+        sum = (evens + odds)
+        print("The Sum is: " + str(sum))
+        checkdigit = 0
+        while sum % 10 != 0:
+            checkdigit = checkdigit + 1
+            sum = sum + 1
+        print("The Check Digit is: " + str(checkdigit))
     else:
         print("Invalid UPC, Please try again...")
